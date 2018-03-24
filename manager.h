@@ -13,6 +13,9 @@ namespace Ui {
 class manager;
 }
 
+class pull_dialog;
+class push_dialog;
+
 class manager : public QWidget
 {
     Q_OBJECT

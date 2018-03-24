@@ -8,13 +8,14 @@
 namespace Ui {
 class pull_dialog;
 }
+class manager;
 
 class pull_dialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit pull_dialog(QWidget *parent = 0);
+    explicit pull_dialog(manager *parent = 0);
     ~pull_dialog();
 
 private slots:
@@ -22,6 +23,7 @@ private slots:
 
 private:
     Ui::pull_dialog *ui;
+    manager *mparent;
 };
 
 #endif // PULL_DIALOG_H

@@ -42,8 +42,8 @@ void manager::on_pushButton_clicked()
 void manager::put_them_in(QString name, int num)
 {
     for (auto good : goods_list) {
-        if (name == good->name()) {
-            good->set_quantity(good->quantity() + num);
+        if (name == good.name()) {
+            good.set_quantity(good.quantity() + num);
             return;
         }
     }
@@ -53,18 +53,18 @@ void manager::put_them_in(QString name, int num)
 void manager::put_them_out(QString name, int num)
 {
     for (auto good : goods_list) {
-        if (name == good->name()) {
-            if (good->quantity() - num < 0) {
-                QMessageBox::Critical(
-                    0, "Are you silly?", QString("We do not have such many ") +
+        if (name == good.name()) {
+            if (good.quantity() - num < 0) {
+                QMessageBox::warning(
+                    this, "Are you silly?", QString("We do not have such many ") +
                     name + QString("!!!!!!"), QMessageBox::Yes
                 );
-            } else good->set_quantity(good->quantity() - num);
+            } else good.set_quantity(good.quantity() - num);
             return;
         }
     }
-    QMessageBox::Critical(
-        0, "Are you silly?", QString("We do not have any ") +
+    QMessageBox::warning(
+        this, "Are you silly?", QString("We do not have any ") +
         name + QString("!!!!!!"), QMessageBox::Yes
     );
 }
