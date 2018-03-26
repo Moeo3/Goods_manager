@@ -5,6 +5,7 @@
 #include <QVector>
 #include <QMessageBox>
 #include <QStandardItemModel>
+#include <QJsonArray>
 #include "goods.h"
 #include "pull_dialog.h"
 #include "push_dialog.h"
@@ -38,6 +39,7 @@ private:
     QVector <goods> goods_list;
     pull_dialog *mpull_dialog;
     push_dialog *mpush_dialog;
+    QJsonArray *json;
 };
 
 #endif // MANAGER_H

@@ -1,12 +1,17 @@
 #include "manager.h"
 #include "ui_manager.h"
 
+#include <QJsonDocument>
+#include <QFile>
+#include <QDebug>
+
 manager::manager(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::manager)
 {
     ui->setupUi(this);
     goods_model = new QStandardItemModel();
+    json = new QJsonArray();
     //Data Model
     goods_model->setHorizontalHeaderItem(0, new QStandardItem(QObject::tr("Name")));
     goods_model->setHorizontalHeaderItem(1, new QStandardItem(QObject::tr("Quantity")));
@@ -20,10 +25,38 @@ manager::manager(QWidget *parent) :
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     // set the units of the table to be read-only.
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    QFile file("list.json");
+    try {
+        file.open(QIODevice::ReadOnly);
+        QByteArray BA = file.readAll();
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(BA);
+        *json = jsonDoc.array();
+    } catch (const char *str) {
+        qDebug() << str;
+    }
+    for (QJsonArray::Iterator iter = json->begin(); iter != json->end(); ++ iter) {
+        goods tmp; tmp.read(iter->toObject());
+        goods_list.push_back(tmp);
+    }
 }
 
 manager::~manager()
 {
+    for (QVector <goods>::Iterator iter = goods_list.begin(); iter != goods_list.end(); ++ iter) {
+        QJsonObject tmp; iter->write(tmp);
+        json->push_back(tmp);
+    }
+    QJsonDocument jsonDoc(*json);
+    QByteArray BA = jsonDoc.toJson();
+    QFile file("list.json");
+    try {
+        file.open(QIODevice::WriteOnly);
+        file.write(BA);
+        file.close();
+    } catch (const char *str) {
+        qDebug() << str;
+    }
     delete ui;
 }
 

@@ -2,7 +2,7 @@
 #include "ui_push_dialog.h"
 
 push_dialog::push_dialog(manager *parent) :
-    QDialog(),
+    QDialog((QWidget *)parent),
     ui(new Ui::push_dialog)
 {
     ui->setupUi(this);

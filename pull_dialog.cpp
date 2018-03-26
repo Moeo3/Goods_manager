@@ -4,7 +4,7 @@
 #include <QDebug>
 
 pull_dialog::pull_dialog(manager *parent) :
-    QDialog(),
+    QDialog((QWidget *)parent),
     ui(new Ui::pull_dialog)
 {
     ui->setupUi(this);
@@ -18,7 +18,7 @@ pull_dialog::~pull_dialog()
 
 void pull_dialog::on_buttonBox_accepted()
 {
-    qDebug("on buttonbox accepted\n");
+    qDebug() << "on buttonbox accepted\n";
     QString pull_context = ui->pull_textbox->toPlainText();
     QStringList context_list = pull_context.split('\n');
     foreach (QString str, context_list) {
@@ -27,5 +27,5 @@ void pull_dialog::on_buttonBox_accepted()
         int item_num = QString(item_list[1]).toInt();
         mparent->put_them_in(item_name, item_num);
     }
-    qDebug("!!!!!!!!!!!!");
+    qDebug() << "!!!!!!!!!\n";
 }
