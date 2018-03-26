@@ -42,7 +42,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>请输入物品名称和数量，以空格分开。</string>
+       <string>请输入物品名称和数量，以空格分开。每样物品一行。</string>
       </property>
      </widget>
     </item>

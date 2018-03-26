@@ -25,7 +25,9 @@ void pull_dialog::on_buttonBox_accepted()
         QStringList item_list = str.split(' ');
         QString item_name = item_list[0];
         int item_num = QString(item_list[1]).toInt();
+        qDebug() << "name:" << item_name << " num" << item_num;
         mparent->put_them_in(item_name, item_num);
     }
     qDebug() << "!!!!!!!!!\n";
+    mparent->update_table();
 }

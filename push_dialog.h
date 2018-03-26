@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "manager.h"
+
 namespace Ui {
 class push_dialog;
 }

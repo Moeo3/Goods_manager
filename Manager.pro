@@ -28,15 +28,18 @@ SOURCES += \
         manager.cpp \
     goods.cpp \
     pull_dialog.cpp \
-    push_dialog.cpp
+    push_dialog.cpp \
+    query_dialog.cpp
 
 HEADERS += \
         manager.h \
     goods.h \
     pull_dialog.h \
-    push_dialog.h
+    push_dialog.h \
+    query_dialog.h
 
 FORMS += \
         manager.ui \
     pull_dialog.ui \
-    push_dialog.ui
+    push_dialog.ui \
+    query_dialog.ui

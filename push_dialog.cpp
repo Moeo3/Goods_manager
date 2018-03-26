@@ -16,14 +16,13 @@ push_dialog::~push_dialog()
 
 void push_dialog::on_buttonBox_accepted()
 {
-    /*
-    QString pull_context = ui->pull_textbox->toPlainText();
-    QStringList context_list = pull_context.split('\n');
-    foreach(QString str, context_list) {
+    QString push_context = ui->push_textbox->toPlainText();
+    QStringList context_list = push_context.split('\n');
+    foreach (QString str, context_list) {
         QStringList item_list = str.split(' ');
         QString item_name = item_list[0];
-        int item_num = QString::toInt(item_list[1]);
+        int item_num = QString(item_list[1]).toInt();
         mparent->put_them_out(item_name, item_num);
     }
-    */
+    mparent->update_table();
 }
