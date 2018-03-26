@@ -31,6 +31,7 @@ manager::manager(QWidget *parent) :
     table_header->setStretchLastSection(true);
     table_header->setAutoFillBackground(true);
 
+    /***********Read Json***********/
     QFile file("list.json");
     QJsonArray json;
     try {
