@@ -19,8 +19,15 @@ void query_dialog::on_buttonBox_accepted()
     QString query_context = ui->query_textbox->toPlainText();
     if (query_context.isEmpty()) {
         mparent->update_table();
+        this->close();
         return;
     }
     QStringList context_list = query_context.split('\n');
     mparent->selcet_table(context_list);
+    this->close();
+}
+
+void query_dialog::on_buttonBox_rejected()
+{
+    this->close();
 }

@@ -24,6 +24,12 @@ manager::manager(QWidget *parent) :
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     // set the units of the table to be read-only.
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableView->setColumnWidth(0, 330);
+    // set header view
+    QHeaderView * table_header = ui->tableView->horizontalHeader();
+    table_header->setDefaultAlignment(Qt::AlignLeft);
+    table_header->setStretchLastSection(true);
+    table_header->setAutoFillBackground(true);
 
     QFile file("list.json");
     QJsonArray json;
@@ -35,13 +41,10 @@ manager::manager(QWidget *parent) :
     } catch (const char *str) {
         qDebug() << str;
     }
-    qDebug() << "我们居然打开了file";
     for (QJsonArray::Iterator iter = json.begin(); iter != json.end(); ++ iter) {
         goods tmp; tmp.read(iter->toObject());
         goods_list.push_back(tmp);
     }
-    qDebug() << "不知道哪里来的" << json;
-    qDebug() << "good数量" << json.size();
     update_table();
 }
 
@@ -58,7 +61,6 @@ manager::~manager()
     QFile file("list.json");
     try {
         file.open(QIODevice::WriteOnly);
-        qDebug() << "写入" << BA;
         file.write(BA);
         file.close();
     } catch (const char *str) {
@@ -69,7 +71,6 @@ manager::~manager()
 
 void manager::on_pullButton_clicked()
 {
-    qDebug() << "点击了pull";
     mpull_dialog = new pull_dialog(this);
     mpull_dialog->show();
 }

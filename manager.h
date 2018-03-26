@@ -17,6 +17,7 @@ class manager;
 
 class pull_dialog;
 class push_dialog;
+class query_dialog;
 
 class manager : public QWidget
 {

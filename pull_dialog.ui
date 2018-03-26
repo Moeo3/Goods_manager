@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Pull Goods</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -42,7 +42,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>请输入物品名称和数量，以空格分开。每样物品一行。</string>
+       <string>Please input name and quantity of each goods.</string>
       </property>
      </widget>
     </item>

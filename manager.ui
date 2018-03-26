@@ -6,25 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>390</height>
+    <width>617</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>manager</string>
+   <string>Goods Manager</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
+     <x>50</x>
+     <y>90</y>
      <width>511</width>
-     <height>351</height>
+     <height>481</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="buttons">
       <item>
        <widget class="QPushButton" name="pullButton">
         <property name="text">
@@ -52,6 +52,35 @@
      <widget class="QTableView" name="tableView"/>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="addr">
+   <property name="geometry">
+    <rect>
+     <x>49</x>
+     <y>578</y>
+     <width>511</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>https://github.com/Moeo3/Goods_manager</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title">
+   <property name="geometry">
+    <rect>
+     <x>59</x>
+     <y>59</y>
+     <width>321</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>A GOODS MANAGER ..maybe</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

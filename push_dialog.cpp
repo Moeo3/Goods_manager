@@ -25,4 +25,5 @@ void push_dialog::on_buttonBox_accepted()
         mparent->put_them_out(item_name, item_num);
     }
     mparent->update_table();
+    this->close();
 }

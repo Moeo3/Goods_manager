@@ -36,10 +36,16 @@ HEADERS += \
     goods.h \
     pull_dialog.h \
     push_dialog.h \
-    query_dialog.h
+    query_dialog.h \
+    common_helper.h
 
 FORMS += \
         manager.ui \
     pull_dialog.ui \
     push_dialog.ui \
     query_dialog.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    style.qrc

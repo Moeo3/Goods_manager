@@ -1,0 +1,58 @@
+manager, pull_dialog, push_dialog, query_dialog{
+    background: rgb(239, 240, 220);
+    /*border: 1px solid rgb(111, 156, 207);*/
+}
+QPushButton {
+    border-radius: 4px;
+    border: 1.2px solid rgb(201, 202, 187);
+    background: rgb(245, 246, 235);
+    color: rgb(52, 53, 44);
+    min-width: 60px;
+    min-height: 25px;
+}
+QPushButton#pullButton, #pushButton, #queryButton {
+    font-size: 18px;
+    min-height: 38px;
+    margin: 12px;
+}
+QHeaderView {
+    border: none;
+    border-bottom: 1.5px solid rgb(201, 202, 187);
+    background: transparent;
+    min-height: 35px;
+    font-size: 16px;
+    color: rgb(52, 53, 44);
+}
+QTableView {
+    border-radius: 4px;
+    border: 1.5px solid rgb(201, 202, 187);
+    gridline-color: rgb(201, 202, 187);
+    background: rgba(245, 246, 235, 0.897);
+    margin: 10px;
+    margin-top: 5px;
+    color: rgb(100, 100, 93);
+    font-size: 14px;
+}
+QTableView::item {
+    border: none;
+    background: rgba(245, 246, 235, 0.541);
+}
+QLabel {
+    color: rgb(52, 53, 44);
+    font-size: 14px;
+}
+QLabel#addr {
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(52, 53, 44);
+}
+QLabel#title {
+    color: rgb(52, 53, 44);
+    font-size: 18px;
+}
+QPlainTextEdit {
+    background: rgba(245, 246, 235, 0.959);
+    border-radius: 4px;
+    border: 1px solid rgb(201, 202, 187);
+    color: rgb(52, 53, 44);
+}

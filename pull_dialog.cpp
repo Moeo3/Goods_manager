@@ -18,16 +18,14 @@ pull_dialog::~pull_dialog()
 
 void pull_dialog::on_buttonBox_accepted()
 {
-    qDebug() << "on buttonbox accepted\n";
     QString pull_context = ui->pull_textbox->toPlainText();
     QStringList context_list = pull_context.split('\n');
     foreach (QString str, context_list) {
         QStringList item_list = str.split(' ');
         QString item_name = item_list[0];
         int item_num = QString(item_list[1]).toInt();
-        qDebug() << "name:" << item_name << " num" << item_num;
         mparent->put_them_in(item_name, item_num);
     }
-    qDebug() << "!!!!!!!!!\n";
     mparent->update_table();
+    this->close();
 }
